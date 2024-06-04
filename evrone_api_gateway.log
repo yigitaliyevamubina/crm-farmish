@@ -1,0 +1,116 @@
+2024-06-04T14:30:08.757+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:33:06.322+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:33:06.325+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:33:09.032+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:34:03.193+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:34:03.194+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:34:08.956+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:35:11.344+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:35:11.344+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:35:12.787+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:36:08.193+0500	WARN	regtool/handle_error.go:21	ERROR: invalid input syntax for type uuid: "" (SQLSTATE 22P02)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).DeleteAnimalTypes
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animal_types.go:222
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T14:36:41.900+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:36:41.900+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:36:43.703+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:36:45.427+0500	WARN	regtool/handle_error.go:21	ERROR: invalid input syntax for type uuid: "" (SQLSTATE 22P02)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).DeleteAnimalTypes
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animal_types.go:224
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T14:37:38.362+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:37:38.363+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:37:40.202+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:37:43.254+0500	WARN	regtool/handle_error.go:21	ERROR: invalid input syntax for type uuid: "" (SQLSTATE 22P02)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).DeleteAnimalTypes
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animal_types.go:224
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T14:39:18.274+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:39:18.275+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:39:19.389+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:40:21.602+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:40:23.208+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:42:41.875+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:42:41.876+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:43:08.422+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:44:57.311+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:44:57.314+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:44:58.966+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:45:29.811+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:45:29.812+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30

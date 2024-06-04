@@ -1,0 +1,127 @@
+2024-06-04T14:15:54.321+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:15:59.894+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:15:59.895+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:16:05.489+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:16:10.691+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:16:10.692+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:17:00.368+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:19:00.849+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:19:00.850+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:19:13.129+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:19:25.371+0500	WARN	regtool/handle_error.go:21	ERROR: syntax error at or near "[" (SQLSTATE 42601)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimalTypes
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animal_types.go:46
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T14:20:17.174+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:20:17.175+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:20:18.269+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:20:21.571+0500	WARN	regtool/handle_error.go:21	ERROR: syntax error at or near "[" (SQLSTATE 42601)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimalTypes
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animal_types.go:46
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T14:22:30.344+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:22:30.344+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:22:48.582+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:22:50.449+0500	WARN	regtool/handle_error.go:21	no rows in result set
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimalTypes
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animal_types.go:46
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T14:23:29.669+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:23:29.670+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T14:23:30.688+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T14:23:32.517+0500	WARN	regtool/handle_error.go:21	no rows in result set
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimalTypes
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animal_types.go:46
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T14:24:40.642+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T14:24:40.643+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
