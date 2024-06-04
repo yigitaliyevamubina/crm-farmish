@@ -2,7 +2,7 @@ package models
 
 type Animal struct {
 	ID              string `json:"id"`
-	Type            string `json:"type"`
+	AnimalTypeID    string `json:"animal_type_id"`
 	Name            string `json:"name"`
 	Gender          string `json:"gender"`
 	Weight          int    `json:"weight"`
@@ -15,7 +15,7 @@ type Animal struct {
 }
 
 type AnimalsCreate struct {
-	Type            string `json:"type"`
+	AnimalTypeID    string `json:"animal_type_id"`
 	Name            string `json:"name"`
 	Gender          string `json:"gender"`
 	Weight          int    `json:"weight"`

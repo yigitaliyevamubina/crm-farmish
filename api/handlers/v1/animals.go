@@ -49,7 +49,7 @@ func (h *HandlerV1) CreateAnimals(c *gin.Context) {
 	}
 
 	res, err := h.animals.CreateAnimals(ctx, &entity.AnimalsCreate{
-		Type:            body.Type,
+		Type:            body.AnimalTypeID,
 		Name:            body.Name,
 		Gender:          body.Gender,
 		Weight:          body.Weight,
@@ -63,7 +63,7 @@ func (h *HandlerV1) CreateAnimals(c *gin.Context) {
 
 	c.JSON(http.StatusOK, &models.Animal{
 		ID:              res.ID,
-		Type:            res.Type,
+		AnimalTypeID:    res.Type,
 		Name:            res.Name,
 		Gender:          res.Gender,
 		Weight:          res.Weight,
@@ -105,7 +105,7 @@ func (h *HandlerV1) GetAnimals(c *gin.Context) {
 
 	c.JSON(http.StatusOK, &models.Animal{
 		ID:              res.ID,
-		Type:            res.Type,
+		AnimalTypeID:    res.Type,
 		Name:            res.Name,
 		Gender:          res.Gender,
 		Weight:          res.Weight,
@@ -157,7 +157,7 @@ func (h *HandlerV1) ListAnimals(c *gin.Context) {
 	for _, animal := range res.Animals {
 		var animalRes models.Animal
 		animalRes.ID = animal.ID
-		animalRes.Type = animal.Type
+		animalRes.AnimalTypeID = animal.Type
 		animalRes.Name = animal.Name
 		animalRes.Gender = animal.Gender
 		animalRes.Weight = animal.Weight
@@ -212,7 +212,6 @@ func (h *HandlerV1) UpdateAnimals(c *gin.Context) {
 
 	res, err := h.animals.UpdateAnimals(ctx, &entity.UpdateAnimalReq{
 		ID:              body.ID,
-		Type:            body.Type,
 		Name:            body.Name,
 		Gender:          body.Gender,
 		Weight:          body.Weight,
@@ -227,7 +226,7 @@ func (h *HandlerV1) UpdateAnimals(c *gin.Context) {
 
 	c.JSON(http.StatusOK, &models.Animal{
 		ID:              res.ID,
-		Type:            res.Type,
+		AnimalTypeID:    res.Type,
 		Name:            res.Name,
 		Gender:          res.Gender,
 		Weight:          res.Weight,

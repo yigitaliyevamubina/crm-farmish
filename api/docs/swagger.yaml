@@ -1,6 +1,8 @@
 definitions:
   models.Animal:
     properties:
+      animal_type_id:
+        type: string
       created_at:
         type: string
       deleted_at:
@@ -16,8 +18,6 @@ definitions:
       last_watered_time:
         type: string
       name:
-        type: string
-      type:
         type: string
       updated_at:
         type: string
@@ -52,6 +52,8 @@ definitions:
     type: object
   models.AnimalsCreate:
     properties:
+      animal_type_id:
+        type: string
       disease:
         type: string
       gender:
@@ -62,10 +64,46 @@ definitions:
         type: string
       name:
         type: string
-      type:
-        type: string
       weight:
         type: integer
+    type: object
+  models.FoodWarehouse:
+    properties:
+      animal_id:
+        type: string
+      animal_type_id:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      group_feeding:
+        type: boolean
+      id:
+        type: string
+      name:
+        type: string
+      quantity:
+        type: integer
+      quantity_type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.FoodWarehouseCreate:
+    properties:
+      animal_id:
+        type: string
+      animal_type_id:
+        type: string
+      group_feeding:
+        type: boolean
+      name:
+        type: string
+      quantity:
+        type: integer
+      quantity_type:
+        type: string
     type: object
   models.ListAnimalTypeRes:
     properties:
@@ -84,6 +122,50 @@ definitions:
         type: array
       count:
         type: integer
+    type: object
+  models.ListFoodWarehouse:
+    properties:
+      count:
+        type: integer
+      food_warehouses:
+        items:
+          $ref: '#/definitions/models.FoodWarehouse'
+        type: array
+    type: object
+  models.ListMedicineWarehouse:
+    properties:
+      count:
+        type: integer
+      medicine_warehouses:
+        items:
+          $ref: '#/definitions/models.MedicineWarehouse'
+        type: array
+    type: object
+  models.MedicineWarehouse:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      quantity:
+        type: integer
+      quantity_type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.MedicineWarehouseCreate:
+    properties:
+      name:
+        type: string
+      quantity:
+        type: integer
+      quantity_type:
+        type: string
     type: object
   models.ResponseError:
     properties:
@@ -126,6 +208,34 @@ definitions:
         type: string
       watering_interval:
         type: integer
+    type: object
+  models.UpdateFoodWarehouseReq:
+    properties:
+      animal_id:
+        type: string
+      animal_type:
+        type: string
+      group_feeding:
+        type: boolean
+      id:
+        type: string
+      name:
+        type: string
+      quantity:
+        type: integer
+      quantity_type:
+        type: string
+    type: object
+  models.UpdateMedicineWarehouseReq:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      quantity:
+        type: integer
+      quantity_type:
+        type: string
     type: object
 host: localhost:9050
 info:
@@ -435,6 +545,308 @@ paths:
       summary: Get Animal s
       tags:
       - Animals
+  /v1/food-warehouse:
+    delete:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Delete FoodWarehouse
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StatusRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete FoodWarehouse
+      tags:
+      - Food Warehouse
+    get:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for List FoodWarehouse
+      parameters:
+      - in: query
+        name: delete_status
+        type: boolean
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: order_by
+        type: string
+      - in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListFoodWarehouse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List Food Warehouse
+      tags:
+      - Food Warehouse
+    post:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for crete FoodWarehouse
+      parameters:
+      - description: FoodWarehouseCreate
+        in: body
+        name: FoodWarehouseCreate
+        required: true
+        schema:
+          $ref: '#/definitions/models.FoodWarehouseCreate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FoodWarehouse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Food Warehouse
+      tags:
+      - Food Warehouse
+    put:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Update FoodWarehouse
+      parameters:
+      - description: UpdateAnimalTypeReq
+        in: body
+        name: UpdateAnimalTypeReq
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateFoodWarehouseReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FoodWarehouse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update FoodWarehouse
+      tags:
+      - Food Warehouse
+  /v1/food-warehouse/get:
+    get:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Get FoodWarehouse
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FoodWarehouse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Food Warehouse
+      tags:
+      - Food Warehouse
+  /v1/medicine:
+    delete:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Delete Medicine Warehouse
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StatusRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete Medicine Warehouse
+      tags:
+      - Medicine Warehouse
+    get:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for List Medicine Warehouse
+      parameters:
+      - in: query
+        name: delete_status
+        type: boolean
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: order_by
+        type: string
+      - in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListMedicineWarehouse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List Medicine Warehouse
+      tags:
+      - Medicine Warehouse
+    post:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for crete MedicineWarehouse
+      parameters:
+      - description: AnimalTypeCreate
+        in: body
+        name: AnimalTypeCreate
+        required: true
+        schema:
+          $ref: '#/definitions/models.MedicineWarehouseCreate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MedicineWarehouse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Medicine Warehouse
+      tags:
+      - Medicine Warehouse
+    put:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Update Medicine Warehouse
+      parameters:
+      - description: UpdateAnimalTypeReq
+        in: body
+        name: UpdateAnimalTypeReq
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateMedicineWarehouseReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MedicineWarehouse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update Medicine Warehouse
+      tags:
+      - Medicine Warehouse
+  /v1/medicine/get:
+    get:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Get Medicine Warehouse
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MedicineWarehouse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Medicine Warehouse
+      tags:
+      - Medicine Warehouse
 securityDefinitions:
   ApiKeyAuth:
     in: header

@@ -6,7 +6,7 @@ type FoodWarehouse struct {
 	Quantity     int    `json:"quantity"`
 	QuantityType string `json:"quantity_type"`
 	AnimalID     string `json:"animal_id"`
-	AnimalType   string `json:"animal_type"`
+	AnimalTypeID string `json:"animal_type_id"`
 	GroupFeeding bool   `json:"group_feeding"`
 	CreatedAt    string `json:"created_at"`
 	UpdatedAt    string `json:"updated_at"`
@@ -18,7 +18,7 @@ type FoodWarehouseCreate struct {
 	Quantity     int    `json:"quantity"`
 	QuantityType string `json:"quantity_type"`
 	AnimalID     string `json:"animal_id"`
-	AnimalType   string `json:"animal_type"`
+	AnimalTypeID string `json:"animal_type_id"`
 	GroupFeeding bool   `json:"group_feeding"`
 }
 

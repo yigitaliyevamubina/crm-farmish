@@ -75,6 +75,20 @@ func NewRoute(option RouteOption) *gin.Engine {
 	animals.PUT("", HandlerV1.UpdateAnimals)
 	animals.DELETE("", HandlerV1.DeleteAnimals)
 
+	foodWarehouse := api.Group("/food-warehouse")
+	foodWarehouse.POST("", HandlerV1.CreateFoodWarehouse)
+	foodWarehouse.GET("/get", HandlerV1.GetFoodWarehouse)
+	foodWarehouse.GET("", HandlerV1.ListFoodWarehouse)
+	foodWarehouse.PUT("", HandlerV1.UpdateFoodWarehouse)
+	foodWarehouse.DELETE("", HandlerV1.DeleteFoodWarehouse)
+
+	medicine := api.Group("/medicine")
+	medicine.POST("", HandlerV1.CreateMedicineWarehouse)
+	medicine.GET("/get", HandlerV1.GetMedicineWarehouse)
+	medicine.GET("", HandlerV1.ListMedicineWarehouse)
+	medicine.PUT("", HandlerV1.UpdateMedicineWarehouse)
+	medicine.DELETE("", HandlerV1.DeleteMedicineWarehouse)
+
 	url := ginSwagger.URL("swagger/doc.json")
 	api.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 

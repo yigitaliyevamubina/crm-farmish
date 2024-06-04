@@ -1,7 +1,7 @@
 ALTER TABLE
     "treatments" ADD CONSTRAINT "treatments_medicine_id_foreign" FOREIGN KEY("medicine_id") REFERENCES "medicine_warehouse"("id");
 ALTER TABLE
-    "food_warehouse" ADD CONSTRAINT "food_warehouse_animal_type_foreign" FOREIGN KEY("animal_id") REFERENCES "animal_types"("id");
+    "food_warehouse" ADD CONSTRAINT "food_warehouse_animal_type_foreign" FOREIGN KEY("animal_type") REFERENCES "animal_types"("id");
 ALTER TABLE
     "treatments" ADD CONSTRAINT "treatments_animal_id_foreign" FOREIGN KEY("animal_id") REFERENCES "animals"("id");
 ALTER TABLE

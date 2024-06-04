@@ -2,6 +2,7 @@ package repo
 
 import (
 	"context"
+	"database/sql"
 	"time"
 
 	"crm-farmish/internal/entity"
@@ -35,7 +36,6 @@ func (r *FoodWarehouseRepo) CreateFoodWarehouse(ctx context.Context, req *entity
 	}
 
 	_, err = r.db.Exec(ctx, sql, args...)
-
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +47,11 @@ func (r *FoodWarehouseRepo) CreateFoodWarehouse(ctx context.Context, req *entity
 }
 
 func (r *FoodWarehouseRepo) GetFoodWarehouse(ctx context.Context, req *entity.FieldValueReq) (*entity.FoodWarehouse, error) {
-	var res entity.FoodWarehouse
+	var (
+		res   entity.FoodWarehouse
+		upAt  sql.NullTime
+		delAt sql.NullTime
+	)
 
 	toSql := r.db.Sq.Builder.
 		Select(r.columns...).
@@ -76,16 +80,30 @@ func (r *FoodWarehouseRepo) GetFoodWarehouse(ctx context.Context, req *entity.Fi
 		&res.AnimalID,
 		&res.AnimalType,
 		&res.GroupFeeding,
+		&res.CreatedAt,
+		&upAt,
+		&delAt,
 	)
 	if err != nil {
 		return nil, err
+	}
+
+	if upAt.Valid {
+		res.UpdatedAt = upAt.Time
+	}
+	if delAt.Valid {
+		res.DeletedAt = delAt.Time
 	}
 
 	return &res, nil
 }
 
 func (r *FoodWarehouseRepo) ListFoodWarehouse(ctx context.Context, req *entity.ListReq) (*entity.ListFoodWarehouse, error) {
-	var res entity.ListFoodWarehouse
+	var (
+		res   entity.ListFoodWarehouse
+		upAt  sql.NullTime
+		delAt sql.NullTime
+	)
 
 	toSql := r.db.Sq.Builder.
 		Select(r.columns...).
@@ -137,9 +155,19 @@ func (r *FoodWarehouseRepo) ListFoodWarehouse(ctx context.Context, req *entity.L
 			&foodWarehouse.AnimalID,
 			&foodWarehouse.AnimalType,
 			&foodWarehouse.GroupFeeding,
+			&foodWarehouse.CreatedAt,
+			&upAt,
+			&delAt,
 		)
 		if err != nil {
 			return nil, err
+		}
+
+		if upAt.Valid {
+			foodWarehouse.UpdatedAt = upAt.Time
+		}
+		if delAt.Valid {
+			foodWarehouse.DeletedAt = delAt.Time
 		}
 
 		res.FoodWarehouses = append(res.FoodWarehouses, foodWarehouse)
