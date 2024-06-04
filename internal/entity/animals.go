@@ -29,7 +29,6 @@ type AnimalsCreate struct {
 
 type UpdateAnimalReq struct {
 	ID              string
-	Type            string
 	Name            string
 	Gender          string
 	Weight          int

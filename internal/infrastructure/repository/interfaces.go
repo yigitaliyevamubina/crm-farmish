@@ -21,7 +21,7 @@ type (
 		CreateAnimals(ctx context.Context, req *entity.AnimalsCreate) (*entity.Animals, error)
 		GetAnimals(ctx context.Context, req *entity.FieldValueReq) (*entity.Animals, error)
 		ListAnimals(ctx context.Context, req *entity.ListReq) (*entity.ListAnimalRes, error)
-		UpdateAnimalsType(ctx context.Context, req *entity.UpdateAnimalTypeReq) (*entity.Animals, error)
+		UpdateAnimals(ctx context.Context, req *entity.UpdateAnimalReq) (*entity.Animals, error)
 		DeleteAnimals(ctx context.Context, req *entity.FieldValueReq) (*entity.StatusRes, error)
 	}
 
@@ -30,7 +30,7 @@ type (
 		CreateFoodWarehouse(ctx context.Context, req *entity.FoodWarehouseCreate) (*entity.FoodWarehouse, error)
 		GetFoodWarehouse(ctx context.Context, req *entity.FieldValueReq) (*entity.FoodWarehouse, error)
 		ListFoodWarehouse(ctx context.Context, req *entity.ListReq) (*entity.ListFoodWarehouse, error)
-		UpdateFoodWarehouseType(ctx context.Context, req *entity.UpdateFoodWarehouseReq) (*entity.FoodWarehouse, error)
+		UpdateFoodWarehouse(ctx context.Context, req *entity.UpdateFoodWarehouseReq) (*entity.FoodWarehouse, error)
 		DeleteFoodWarehouse(ctx context.Context, req *entity.FieldValueReq) (*entity.StatusRes, error)
 	}
 
@@ -39,7 +39,7 @@ type (
 		CreateMedicine(ctx context.Context, req *entity.MedicineWarehouseCreate) (*entity.MedicineWarehouse, error)
 		GetMedicine(ctx context.Context, req *entity.FieldValueReq) (*entity.MedicineWarehouse, error)
 		ListMedicine(ctx context.Context, req *entity.ListReq) (*entity.ListMedicineWarehouse, error)
-		UpdateMedicineType(ctx context.Context, req *entity.UpdateMedicineWarehouseReq) (*entity.MedicineWarehouse, error)
+		UpdateMedicine(ctx context.Context, req *entity.UpdateMedicineWarehouseReq) (*entity.MedicineWarehouse, error)
 		DeleteMedicine(ctx context.Context, req *entity.FieldValueReq) (*entity.StatusRes, error)
 	}
 )

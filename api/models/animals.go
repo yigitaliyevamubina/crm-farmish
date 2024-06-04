@@ -1,6 +1,6 @@
 package models
 
-type Animals struct {
+type Animal struct {
 	ID              string `json:"id"`
 	Type            string `json:"type"`
 	Name            string `json:"name"`
@@ -26,7 +26,6 @@ type AnimalsCreate struct {
 
 type UpdateAnimalReq struct {
 	ID              string `json:"id"`
-	Type            string `json:"type"`
 	Name            string `json:"name"`
 	Gender          string `json:"gender"`
 	Weight          int    `json:"weight"`
@@ -35,7 +34,7 @@ type UpdateAnimalReq struct {
 	Disease         string `json:"disease"`
 }
 
-type ListAnimalRes struct {
-	Count   int       `json:"count"`
-	Animals []Animals `json:"animals"`
+type ListAnimalsRes struct {
+	Count   int      `json:"count"`
+	Animals []Animal `json:"animals"`
 }

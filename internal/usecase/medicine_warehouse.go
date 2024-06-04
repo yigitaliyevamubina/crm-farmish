@@ -29,8 +29,8 @@ func (r *MedicineWarehouseUseCase) ListMedicine(ctx context.Context, req *entity
 
 }
 
-func (r *MedicineWarehouseUseCase) UpdateMedicineType(ctx context.Context, req *entity.UpdateMedicineWarehouseReq) (*entity.MedicineWarehouse, error) {
-	return r.Repo.UpdateMedicineType(ctx, req)
+func (r *MedicineWarehouseUseCase) UpdateMedicine(ctx context.Context, req *entity.UpdateMedicineWarehouseReq) (*entity.MedicineWarehouse, error) {
+	return r.Repo.UpdateMedicine(ctx, req)
 
 }
 

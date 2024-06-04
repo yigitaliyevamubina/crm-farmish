@@ -2,7 +2,6 @@ package repo
 
 import (
 	"context"
-	"fmt"
 	"time"
 
 	"crm-farmish/internal/entity"
@@ -25,34 +24,26 @@ func NewFoodWarehouseRepo(pg *postgres.PostgresDB) *FoodWarehouseRepo {
 }
 
 func (r *FoodWarehouseRepo) CreateFoodWarehouse(ctx context.Context, req *entity.FoodWarehouseCreate) (*entity.FoodWarehouse, error) {
-	var res entity.FoodWarehouse
 	sql, args, err := r.db.Sq.Builder.
 		Insert(r.table).
-		Columns("id", "name", "quantity", "quantity_type", "animal_id", "animal_type", "group_feeding").
-		Values(req.ID, req.Name, req.Quantity, req.QuantityType, req.AnimalID, req.AnimalType, req.GroupFeeding).
-		Suffix(fmt.Sprintf("RETURNING %s", r.columns)).
+		Columns("id", "name", "quantity", "quantity_type", "animal_id", "animal_type", "group_feeding", "created_at").
+		Values(req.ID, req.Name, req.Quantity, req.QuantityType, req.AnimalID, req.AnimalType, req.GroupFeeding, time.Now()).
 		ToSql()
 
 	if err != nil {
 		return nil, err
 	}
 
-	row := r.db.QueryRow(ctx, sql, args...)
+	_, err = r.db.Exec(ctx, sql, args...)
 
-	err = row.Scan(
-		&res.ID,
-		&res.Name,
-		&res.Quantity,
-		&res.QuantityType,
-		&res.AnimalID,
-		&res.AnimalType,
-		&res.GroupFeeding,
-	)
 	if err != nil {
 		return nil, err
 	}
 
-	return &res, nil
+	return r.GetFoodWarehouse(ctx, &entity.FieldValueReq{
+		Field: "id",
+		Value: req.ID,
+	})
 }
 
 func (r *FoodWarehouseRepo) GetFoodWarehouse(ctx context.Context, req *entity.FieldValueReq) (*entity.FoodWarehouse, error) {
@@ -156,7 +147,7 @@ func (r *FoodWarehouseRepo) ListFoodWarehouse(ctx context.Context, req *entity.L
 	return &res, nil
 }
 
-func (r *FoodWarehouseRepo) UpdateFoodWarehouseType(ctx context.Context, req *entity.UpdateFoodWarehouseReq) (*entity.FoodWarehouse, error) {
+func (r *FoodWarehouseRepo) UpdateFoodWarehouse(ctx context.Context, req *entity.UpdateFoodWarehouseReq) (*entity.FoodWarehouse, error) {
 	toSql, args, err := r.db.Sq.Builder.Update(r.table).
 		SetMap(map[string]interface{}{
 			"name":         req.Name,

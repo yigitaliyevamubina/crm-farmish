@@ -3,7 +3,6 @@ package repo
 import (
 	"context"
 	sql2 "database/sql"
-	"fmt"
 	"time"
 
 	"crm-farmish/internal/entity"
@@ -26,49 +25,26 @@ func NewAnimalsRepo(pg *postgres.PostgresDB) *AnimalsRepo {
 }
 
 func (r *AnimalsRepo) CreateAnimals(ctx context.Context, req *entity.AnimalsCreate) (*entity.Animals, error) {
-	var (
-		res   entity.Animals
-		upAt  sql2.NullTime
-		delAt sql2.NullTime
-	)
 	sql, args, err := r.db.Sq.Builder.
 		Insert(r.table).
-		Columns("id", "type", "name", "gender", "weight", "last_fed_time", "last_watered_time", "disease").
-		Values(req.ID, req.Type, req.Name, req.Gender, req.Weight, req.LastFedTime, req.LastWateredTime, req.Disease).
-		Suffix(fmt.Sprintf("RETURNING %s", r.columns)).
+		Columns("id", "type", "name", "gender", "weight", "last_fed_time", "last_watered_time", "disease", "created_at").
+		Values(req.ID, req.Type, req.Name, req.Gender, req.Weight, req.LastFedTime, req.LastWateredTime, req.Disease, time.Now()).
 		ToSql()
 
 	if err != nil {
 		return nil, err
 	}
 
-	row := r.db.QueryRow(ctx, sql, args...)
+	_, err = r.db.Exec(ctx, sql, args...)
 
-	err = row.Scan(
-		&res.ID,
-		&res.Type,
-		&res.Name,
-		&res.Gender,
-		&res.Weight,
-		&res.LastFedTime,
-		&res.LastWateredTime,
-		&res.Disease,
-		&res.CreatedAt,
-		&upAt,
-		&delAt,
-	)
 	if err != nil {
 		return nil, err
 	}
 
-	if upAt.Valid {
-		res.UpdatedAt = upAt.Time
-	}
-	if delAt.Valid {
-		res.DeletedAt = delAt.Time
-	}
-
-	return &res, nil
+	return r.GetAnimals(ctx, &entity.FieldValueReq{
+		Field: "id",
+		Value: req.ID,
+	})
 }
 
 func (r *AnimalsRepo) GetAnimals(ctx context.Context, req *entity.FieldValueReq) (*entity.Animals, error) {
@@ -96,7 +72,6 @@ func (r *AnimalsRepo) GetAnimals(ctx context.Context, req *entity.FieldValueReq)
 	}
 
 	row := r.db.QueryRow(ctx, toSqls, args...)
-
 	err = row.Scan(
 		&res.ID,
 		&res.Type,
@@ -110,6 +85,7 @@ func (r *AnimalsRepo) GetAnimals(ctx context.Context, req *entity.FieldValueReq)
 		&upAt,
 		&delAt,
 	)
+
 	if err != nil {
 		return nil, err
 	}
@@ -200,12 +176,15 @@ func (r *AnimalsRepo) ListAnimals(ctx context.Context, req *entity.ListReq) (*en
 	return &res, nil
 }
 
-func (r *AnimalsRepo) UpdateAnimalsType(ctx context.Context, req *entity.UpdateAnimalTypeReq) (*entity.Animals, error) {
+func (r *AnimalsRepo) UpdateAnimals(ctx context.Context, req *entity.UpdateAnimalReq) (*entity.Animals, error) {
 	toSql, args, err := r.db.Sq.Builder.Update(r.table).
 		SetMap(map[string]interface{}{
-			"type":              req.Type,
-			"feeding_interval":  req.FeedingInterval,
-			"watering_interval": req.WateringInterval,
+			"name":              req.Name,
+			"gender":            req.Gender,
+			"weight":            req.Weight,
+			"last_fed_time":     req.LastFedTime,
+			"last_watered_time": req.LastWateredTime,
+			"disease":           req.Disease,
 			"updated_at":        time.Now(),
 		}).
 		Where(r.db.Sq.Equal("id", req.ID)).

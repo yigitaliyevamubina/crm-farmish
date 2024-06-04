@@ -28,8 +28,8 @@ func (r *AnimalsUseCase) ListAnimals(ctx context.Context, req *entity.ListReq) (
 	return r.Repo.ListAnimals(ctx, req)
 }
 
-func (r *AnimalsUseCase) UpdateAnimalsType(ctx context.Context, req *entity.UpdateAnimalTypeReq) (*entity.Animals, error) {
-	return r.Repo.UpdateAnimalsType(ctx, req)
+func (r *AnimalsUseCase) UpdateAnimals(ctx context.Context, req *entity.UpdateAnimalReq) (*entity.Animals, error) {
+	return r.Repo.UpdateAnimals(ctx, req)
 }
 
 func (r *AnimalsUseCase) DeleteAnimals(ctx context.Context, req *entity.FieldValueReq) (*entity.StatusRes, error) {

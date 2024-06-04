@@ -28,8 +28,8 @@ func (r *FoodWarehouseUseCase) ListFoodWarehouse(ctx context.Context, req *entit
 
 }
 
-func (r *FoodWarehouseUseCase) UpdateFoodWarehouseType(ctx context.Context, req *entity.UpdateFoodWarehouseReq) (*entity.FoodWarehouse, error) {
-	return r.Repo.UpdateFoodWarehouseType(ctx, req)
+func (r *FoodWarehouseUseCase) UpdateFoodWarehouse(ctx context.Context, req *entity.UpdateFoodWarehouseReq) (*entity.FoodWarehouse, error) {
+	return r.Repo.UpdateFoodWarehouse(ctx, req)
 
 }
 

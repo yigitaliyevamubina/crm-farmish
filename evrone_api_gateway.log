@@ -114,3 +114,270 @@ main.main.func1
 2024-06-04T14:45:29.812+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
 main.main.func1
 	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T15:15:18.793+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T15:15:36.690+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T15:15:36.691+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T15:15:55.547+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T15:16:40.919+0500	WARN	regtool/handle_error.go:21	ERROR: syntax error at or near "[" (SQLSTATE 42601)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:19:24.385+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T15:19:24.386+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T15:19:25.850+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T15:19:27.779+0500	WARN	regtool/handle_error.go:21	ERROR: invalid input syntax for type uuid: "string" (SQLSTATE 22P02)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:20:24.130+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T15:20:24.130+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T15:20:25.242+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T15:20:28.209+0500	WARN	regtool/handle_error.go:21	ERROR: invalid input syntax for type uuid: "string" (SQLSTATE 22P02)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:21:02.624+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T15:21:03.693+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T15:21:06.319+0500	WARN	regtool/handle_error.go:21	ERROR: invalid input syntax for type uuid: "string" (SQLSTATE 22P02)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:21:22.939+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T15:21:22.940+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T15:21:24.062+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T15:21:25.906+0500	WARN	regtool/handle_error.go:21	ERROR: invalid input syntax for type uuid: "string" (SQLSTATE 22P02)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:22:27.839+0500	WARN	regtool/handle_error.go:21	ERROR: insert or update on table "animals" violates foreign key constraint "animals_type_foreign" (SQLSTATE 23503)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:22:50.246+0500	WARN	regtool/handle_error.go:21	can't scan into dest[8]: cannot assign NULL to *time.Time
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:23:58.565+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T15:23:58.565+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T15:24:02.599+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T15:24:04.607+0500	WARN	regtool/handle_error.go:21	can't scan into dest[8]: cannot assign NULL to *time.Time
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:25:16.471+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T15:25:16.475+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-04T15:25:30.656+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-04T15:26:50.406+0500	WARN	regtool/handle_error.go:21	parsing time "test" as "2006-01-02 15:04:05": cannot parse "test" as "2006"
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).UpdateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:201
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:27:22.571+0500	WARN	regtool/handle_error.go:21	ERROR: new row for relation "animals" violates check constraint "animals_gender_check" (SQLSTATE 23514)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).UpdateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:224
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/lib/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/lib/go/src/net/http/server.go:2039
+2024-06-04T15:28:22.355+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-04T15:28:22.355+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30

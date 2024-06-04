@@ -3,7 +3,6 @@ package repo
 import (
 	"context"
 	sql2 "database/sql"
-	"fmt"
 	"time"
 
 	"crm-farmish/internal/entity"
@@ -26,45 +25,26 @@ func NewMedicineWarehouseRepo(pg *postgres.PostgresDB) *MedicineWarehouse {
 }
 
 func (r *MedicineWarehouse) CreateMedicine(ctx context.Context, req *entity.MedicineWarehouseCreate) (*entity.MedicineWarehouse, error) {
-	var (
-		res   entity.MedicineWarehouse
-		upAt  sql2.NullTime
-		delAt sql2.NullTime
-	)
 	sql, args, err := r.db.Sq.Builder.
 		Insert(r.table).
-		Columns("id", "name", "quantity", "quantity_type").
-		Values(req.ID, req.Name, req.Quantity, req.QuantityType).
-		Suffix(fmt.Sprintf("RETURNING %s", r.columns)).
+		Columns("id", "name", "quantity", "quantity_type", "created_at").
+		Values(req.ID, req.Name, req.Quantity, req.QuantityType, time.Now()).
 		ToSql()
 
 	if err != nil {
 		return nil, err
 	}
 
-	row := r.db.QueryRow(ctx, sql, args...)
+	_, err = r.db.Exec(ctx, sql, args...)
 
-	err = row.Scan(
-		&res.ID,
-		&res.Name,
-		&res.Quantity,
-		&res.QuantityType,
-		&res.CreatedAt,
-		&upAt,
-		&delAt,
-	)
 	if err != nil {
 		return nil, err
 	}
 
-	if upAt.Valid {
-		res.UpdatedAt = upAt.Time
-	}
-	if delAt.Valid {
-		res.DeletedAt = delAt.Time
-	}
-
-	return &res, nil
+	return r.GetMedicine(ctx, &entity.FieldValueReq{
+		Field: "id",
+		Value: req.ID,
+	})
 }
 
 func (r *MedicineWarehouse) GetMedicine(ctx context.Context, req *entity.FieldValueReq) (*entity.MedicineWarehouse, error) {
@@ -188,7 +168,7 @@ func (r *MedicineWarehouse) ListMedicine(ctx context.Context, req *entity.ListRe
 	return &res, nil
 }
 
-func (r *MedicineWarehouse) UpdateMedicineType(ctx context.Context, req *entity.UpdateMedicineWarehouseReq) (*entity.MedicineWarehouse, error) {
+func (r *MedicineWarehouse) UpdateMedicine(ctx context.Context, req *entity.UpdateMedicineWarehouseReq) (*entity.MedicineWarehouse, error) {
 	toSql, args, err := r.db.Sq.Builder.Update(r.table).
 		SetMap(map[string]interface{}{
 			"name":          req.Name,

@@ -1,4 +1,29 @@
 definitions:
+  models.Animal:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      disease:
+        type: string
+      gender:
+        type: string
+      id:
+        type: string
+      last_fed_time:
+        type: string
+      last_watered_time:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+      weight:
+        type: integer
+    type: object
   models.AnimalType:
     properties:
       created_at:
@@ -25,11 +50,37 @@ definitions:
       watering_interval:
         type: integer
     type: object
+  models.AnimalsCreate:
+    properties:
+      disease:
+        type: string
+      gender:
+        type: string
+      last_fed_time:
+        type: string
+      last_watered_time:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      weight:
+        type: integer
+    type: object
   models.ListAnimalTypeRes:
     properties:
       animal_types:
         items:
           $ref: '#/definitions/models.AnimalType'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.ListAnimalsRes:
+    properties:
+      animals:
+        items:
+          $ref: '#/definitions/models.Animal'
         type: array
       count:
         type: integer
@@ -47,6 +98,23 @@ definitions:
     properties:
       status:
         type: boolean
+    type: object
+  models.UpdateAnimalReq:
+    properties:
+      disease:
+        type: string
+      gender:
+        type: string
+      id:
+        type: string
+      last_fed_time:
+        type: string
+      last_watered_time:
+        type: string
+      name:
+        type: string
+      weight:
+        type: integer
     type: object
   models.UpdateAnimalTypeReq:
     properties:
@@ -216,6 +284,157 @@ paths:
       summary: Get Animal Types
       tags:
       - Animal Types
+  /v1/animals:
+    delete:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Delete Animals
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StatusRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Delete Animals
+      tags:
+      - Animals
+    get:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for List Animals
+      parameters:
+      - in: query
+        name: delete_status
+        type: boolean
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: order_by
+        type: string
+      - in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListAnimalsRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Lis tAnimals
+      tags:
+      - Animals
+    post:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for crete Animals
+      parameters:
+      - description: AnimalTypeCreate
+        in: body
+        name: AnimalTypeCreate
+        required: true
+        schema:
+          $ref: '#/definitions/models.AnimalsCreate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Animal'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Animal s
+      tags:
+      - Animals
+    put:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Update Animals
+      parameters:
+      - description: UpdateAnimalTypeReq
+        in: body
+        name: UpdateAnimalTypeReq
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateAnimalReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Animal'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Update Animals
+      tags:
+      - Animals
+  /v1/animals/get:
+    get:
+      consumes:
+      - application/json
+      description: CreateDoctor - Api for Get Animals
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Animal'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Animal s
+      tags:
+      - Animals
 securityDefinitions:
   ApiKeyAuth:
     in: header
