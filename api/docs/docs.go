@@ -17,7 +17,7 @@ const docTemplate = `{
     "paths": {
         "/v1/animal-type": {
             "get": {
-                "description": "CreateDoctor - Api for List Animal Types",
+                "description": "ListAnimalTypes - Api for List Animal Types",
                 "consumes": [
                     "application/json"
                 ],
@@ -72,7 +72,7 @@ const docTemplate = `{
                 }
             },
             "put": {
-                "description": "CreateDoctor - Api for Update Animal Types",
+                "description": "UpdateAnimalTypes - Api for Update Animal Types",
                 "consumes": [
                     "application/json"
                 ],
@@ -116,7 +116,7 @@ const docTemplate = `{
                 }
             },
             "post": {
-                "description": "CreateDoctor - Api for crete Animal Types",
+                "description": "CreateAnimalTypes - Api for crete Animal Types",
                 "consumes": [
                     "application/json"
                 ],
@@ -160,7 +160,7 @@ const docTemplate = `{
                 }
             },
             "delete": {
-                "description": "CreateDoctor - Api for Delete Animal Types",
+                "description": "DeleteAnimalTypes - Api for Delete Animal Types",
                 "consumes": [
                     "application/json"
                 ],
@@ -204,7 +204,7 @@ const docTemplate = `{
         },
         "/v1/animal-type/get": {
             "get": {
-                "description": "CreateDoctor - Api for Get Animal Types",
+                "description": "GetAnimalTypes - Api for Get Animal Types",
                 "consumes": [
                     "application/json"
                 ],
@@ -248,7 +248,7 @@ const docTemplate = `{
         },
         "/v1/animals": {
             "get": {
-                "description": "CreateDoctor - Api for List Animals",
+                "description": "ListAnimals - Api for List Animals",
                 "consumes": [
                     "application/json"
                 ],
@@ -303,7 +303,7 @@ const docTemplate = `{
                 }
             },
             "put": {
-                "description": "CreateDoctor - Api for Update Animals",
+                "description": "UpdateAnimals - Api for Update Animals",
                 "consumes": [
                     "application/json"
                 ],
@@ -347,7 +347,7 @@ const docTemplate = `{
                 }
             },
             "post": {
-                "description": "CreateDoctor - Api for crete Animals",
+                "description": "CreateAnimals - Api for crete Animals",
                 "consumes": [
                     "application/json"
                 ],
@@ -391,7 +391,7 @@ const docTemplate = `{
                 }
             },
             "delete": {
-                "description": "CreateDoctor - Api for Delete Animals",
+                "description": "DeleteAnimals - Api for Delete Animals",
                 "consumes": [
                     "application/json"
                 ],
@@ -435,7 +435,7 @@ const docTemplate = `{
         },
         "/v1/animals/get": {
             "get": {
-                "description": "CreateDoctor - Api for Get Animals",
+                "description": "GetAnimals - Api for Get Animals",
                 "consumes": [
                     "application/json"
                 ],
@@ -477,9 +477,203 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/food-warehouse": {
+        "/v1/feeding": {
             "get": {
-                "description": "CreateDoctor - Api for List FoodWarehouse",
+                "description": "ListFeedingBy - API for listing feedings",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Feeding"
+                ],
+                "summary": "List Feeding",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "page",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListFeeding"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "CreateFeeding - Api for crete Feeding",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Feeding"
+                ],
+                "summary": "Create Feeding",
+                "parameters": [
+                    {
+                        "description": "AnimalTypeCreate",
+                        "name": "AnimalTypeCreate",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateFeeding"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Animal"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/feeding/animal-id": {
+            "get": {
+                "description": "ListFeedingByAnimalID - Api for List Feeding By AnimalID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Feeding"
+                ],
+                "summary": "List Feeding By AnimalID",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "animal_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "name": "delete_status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListFeeding"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/feeding/get": {
+            "get": {
+                "description": "GetFeeding - Api for Get Feeding",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Feeding"
+                ],
+                "summary": "Get Feeding",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Feeding"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/food": {
+            "get": {
+                "description": "ListFoodWarehouse - Api for List FoodWarehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -534,7 +728,7 @@ const docTemplate = `{
                 }
             },
             "put": {
-                "description": "CreateDoctor - Api for Update FoodWarehouse",
+                "description": "UpdateFoodWarehouse - Api for Update FoodWarehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -578,7 +772,7 @@ const docTemplate = `{
                 }
             },
             "post": {
-                "description": "CreateDoctor - Api for crete FoodWarehouse",
+                "description": "CreateFoodWarehouse - Api for crete FoodWarehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -622,7 +816,7 @@ const docTemplate = `{
                 }
             },
             "delete": {
-                "description": "CreateDoctor - Api for Delete FoodWarehouse",
+                "description": "DeleteFoodWarehouse - Api for Delete FoodWarehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -664,9 +858,9 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/food-warehouse/get": {
+        "/v1/food/get": {
             "get": {
-                "description": "CreateDoctor - Api for Get FoodWarehouse",
+                "description": "GetFoodWarehouse - Api for Get FoodWarehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -710,7 +904,7 @@ const docTemplate = `{
         },
         "/v1/medicine": {
             "get": {
-                "description": "CreateDoctor - Api for List Medicine Warehouse",
+                "description": "ListMedicineWarehouse - Api for List Medicine Warehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -765,7 +959,7 @@ const docTemplate = `{
                 }
             },
             "put": {
-                "description": "CreateDoctor - Api for Update Medicine Warehouse",
+                "description": "UpdateMedicineWarehouse - Api for Update Medicine Warehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -809,7 +1003,7 @@ const docTemplate = `{
                 }
             },
             "post": {
-                "description": "CreateDoctor - Api for crete MedicineWarehouse",
+                "description": "CreateMedicineWarehouse - Api for crete MedicineWarehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -853,7 +1047,7 @@ const docTemplate = `{
                 }
             },
             "delete": {
-                "description": "CreateDoctor - Api for Delete Medicine Warehouse",
+                "description": "DeleteMedicineWarehouse - Api for Delete Medicine Warehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -897,7 +1091,7 @@ const docTemplate = `{
         },
         "/v1/medicine/get": {
             "get": {
-                "description": "CreateDoctor - Api for Get Medicine Warehouse",
+                "description": "GetMedicineWarehouse - Api for Get Medicine Warehouse",
                 "consumes": [
                     "application/json"
                 ],
@@ -1045,6 +1239,34 @@ const docTemplate = `{
                 }
             }
         },
+        "models.CreateFeeding": {
+            "type": "object",
+            "properties": {
+                "animal_id": {
+                    "type": "string"
+                },
+                "male_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Feeding": {
+            "type": "object",
+            "properties": {
+                "animal_id": {
+                    "type": "string"
+                },
+                "feeding_time": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "male_id": {
+                    "type": "string"
+                }
+            }
+        },
         "models.FoodWarehouse": {
             "type": "object",
             "properties": {
@@ -1128,6 +1350,20 @@ const docTemplate = `{
                 },
                 "count": {
                     "type": "integer"
+                }
+            }
+        },
+        "models.ListFeeding": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "feedings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Feeding"
+                    }
                 }
             }
         },
@@ -1323,7 +1559,7 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:9050",
 	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "Dennic Project",
+	Title:            "CRM Farmish",
 	Description:      "",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,

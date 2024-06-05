@@ -24,10 +24,11 @@ type RouteOption struct {
 	Animals           usecase.Animals
 	FoodWarehouse     usecase.FoodWarehouse
 	MedicineWarehouse usecase.MedicineWarehouse
+	Feeding           usecase.Feeding
 }
 
 // NewRoute
-// @title Dennic Project
+// @title CRM Farmish
 // @version 1.7
 // @host localhost:9050
 // @securityDefinitions.apikey ApiKeyAuth
@@ -47,6 +48,7 @@ func NewRoute(option RouteOption) *gin.Engine {
 		Animals:           option.Animals,
 		FoodWarehouse:     option.FoodWarehouse,
 		MedicineWarehouse: option.MedicineWarehouse,
+		Feeding:           option.Feeding,
 
 		//BrokerProducer: option.BrokerProducer,
 	})
@@ -75,7 +77,7 @@ func NewRoute(option RouteOption) *gin.Engine {
 	animals.PUT("", HandlerV1.UpdateAnimals)
 	animals.DELETE("", HandlerV1.DeleteAnimals)
 
-	foodWarehouse := api.Group("/food-warehouse")
+	foodWarehouse := api.Group("/food")
 	foodWarehouse.POST("", HandlerV1.CreateFoodWarehouse)
 	foodWarehouse.GET("/get", HandlerV1.GetFoodWarehouse)
 	foodWarehouse.GET("", HandlerV1.ListFoodWarehouse)
@@ -88,6 +90,12 @@ func NewRoute(option RouteOption) *gin.Engine {
 	medicine.GET("", HandlerV1.ListMedicineWarehouse)
 	medicine.PUT("", HandlerV1.UpdateMedicineWarehouse)
 	medicine.DELETE("", HandlerV1.DeleteMedicineWarehouse)
+
+	feeding := api.Group("/feeding")
+	feeding.POST("", HandlerV1.CreateFeeding)
+	feeding.GET("/get", HandlerV1.GetFeeding)
+	feeding.GET("", HandlerV1.ListFeeding)
+	feeding.GET("/animal-id", HandlerV1.ListFeedingByAnimalID)
 
 	url := ginSwagger.URL("swagger/doc.json")
 	api.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))

@@ -67,6 +67,24 @@ definitions:
       weight:
         type: integer
     type: object
+  models.CreateFeeding:
+    properties:
+      animal_id:
+        type: string
+      male_id:
+        type: string
+    type: object
+  models.Feeding:
+    properties:
+      animal_id:
+        type: string
+      feeding_time:
+        type: string
+      id:
+        type: string
+      male_id:
+        type: string
+    type: object
   models.FoodWarehouse:
     properties:
       animal_id:
@@ -122,6 +140,15 @@ definitions:
         type: array
       count:
         type: integer
+    type: object
+  models.ListFeeding:
+    properties:
+      count:
+        type: integer
+      feedings:
+        items:
+          $ref: '#/definitions/models.Feeding'
+        type: array
     type: object
   models.ListFoodWarehouse:
     properties:
@@ -240,14 +267,14 @@ definitions:
 host: localhost:9050
 info:
   contact: {}
-  title: Dennic Project
+  title: CRM Farmish
   version: "1.7"
 paths:
   /v1/animal-type:
     delete:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Delete Animal Types
+      description: DeleteAnimalTypes - Api for Delete Animal Types
       parameters:
       - description: id
         in: query
@@ -275,7 +302,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: CreateDoctor - Api for List Animal Types
+      description: ListAnimalTypes - Api for List Animal Types
       parameters:
       - in: query
         name: delete_status
@@ -310,7 +337,7 @@ paths:
     post:
       consumes:
       - application/json
-      description: CreateDoctor - Api for crete Animal Types
+      description: CreateAnimalTypes - Api for crete Animal Types
       parameters:
       - description: AnimalTypeCreate
         in: body
@@ -339,7 +366,7 @@ paths:
     put:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Update Animal Types
+      description: UpdateAnimalTypes - Api for Update Animal Types
       parameters:
       - description: UpdateAnimalTypeReq
         in: body
@@ -369,7 +396,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Get Animal Types
+      description: GetAnimalTypes - Api for Get Animal Types
       parameters:
       - description: id
         in: query
@@ -398,7 +425,7 @@ paths:
     delete:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Delete Animals
+      description: DeleteAnimals - Api for Delete Animals
       parameters:
       - description: id
         in: query
@@ -426,7 +453,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: CreateDoctor - Api for List Animals
+      description: ListAnimals - Api for List Animals
       parameters:
       - in: query
         name: delete_status
@@ -461,7 +488,7 @@ paths:
     post:
       consumes:
       - application/json
-      description: CreateDoctor - Api for crete Animals
+      description: CreateAnimals - Api for crete Animals
       parameters:
       - description: AnimalTypeCreate
         in: body
@@ -490,7 +517,7 @@ paths:
     put:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Update Animals
+      description: UpdateAnimals - Api for Update Animals
       parameters:
       - description: UpdateAnimalTypeReq
         in: body
@@ -520,7 +547,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Get Animals
+      description: GetAnimals - Api for Get Animals
       parameters:
       - description: id
         in: query
@@ -545,11 +572,137 @@ paths:
       summary: Get Animal s
       tags:
       - Animals
-  /v1/food-warehouse:
+  /v1/feeding:
+    get:
+      consumes:
+      - application/json
+      description: ListFeedingBy - API for listing feedings
+      parameters:
+      - description: limit
+        in: query
+        name: limit
+        type: string
+      - description: page
+        in: query
+        name: page
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListFeeding'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List Feeding
+      tags:
+      - Feeding
+    post:
+      consumes:
+      - application/json
+      description: CreateFeeding - Api for crete Feeding
+      parameters:
+      - description: AnimalTypeCreate
+        in: body
+        name: AnimalTypeCreate
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateFeeding'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Animal'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Feeding
+      tags:
+      - Feeding
+  /v1/feeding/animal-id:
+    get:
+      consumes:
+      - application/json
+      description: ListFeedingByAnimalID - Api for List Feeding By AnimalID
+      parameters:
+      - in: query
+        name: animal_id
+        type: string
+      - in: query
+        name: delete_status
+        type: boolean
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListFeeding'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List Feeding By AnimalID
+      tags:
+      - Feeding
+  /v1/feeding/get:
+    get:
+      consumes:
+      - application/json
+      description: GetFeeding - Api for Get Feeding
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Feeding'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Feeding
+      tags:
+      - Feeding
+  /v1/food:
     delete:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Delete FoodWarehouse
+      description: DeleteFoodWarehouse - Api for Delete FoodWarehouse
       parameters:
       - description: id
         in: query
@@ -577,7 +730,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: CreateDoctor - Api for List FoodWarehouse
+      description: ListFoodWarehouse - Api for List FoodWarehouse
       parameters:
       - in: query
         name: delete_status
@@ -612,7 +765,7 @@ paths:
     post:
       consumes:
       - application/json
-      description: CreateDoctor - Api for crete FoodWarehouse
+      description: CreateFoodWarehouse - Api for crete FoodWarehouse
       parameters:
       - description: FoodWarehouseCreate
         in: body
@@ -641,7 +794,7 @@ paths:
     put:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Update FoodWarehouse
+      description: UpdateFoodWarehouse - Api for Update FoodWarehouse
       parameters:
       - description: UpdateAnimalTypeReq
         in: body
@@ -667,11 +820,11 @@ paths:
       summary: Update FoodWarehouse
       tags:
       - Food Warehouse
-  /v1/food-warehouse/get:
+  /v1/food/get:
     get:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Get FoodWarehouse
+      description: GetFoodWarehouse - Api for Get FoodWarehouse
       parameters:
       - description: id
         in: query
@@ -700,7 +853,7 @@ paths:
     delete:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Delete Medicine Warehouse
+      description: DeleteMedicineWarehouse - Api for Delete Medicine Warehouse
       parameters:
       - description: id
         in: query
@@ -728,7 +881,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: CreateDoctor - Api for List Medicine Warehouse
+      description: ListMedicineWarehouse - Api for List Medicine Warehouse
       parameters:
       - in: query
         name: delete_status
@@ -763,7 +916,7 @@ paths:
     post:
       consumes:
       - application/json
-      description: CreateDoctor - Api for crete MedicineWarehouse
+      description: CreateMedicineWarehouse - Api for crete MedicineWarehouse
       parameters:
       - description: AnimalTypeCreate
         in: body
@@ -792,7 +945,7 @@ paths:
     put:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Update Medicine Warehouse
+      description: UpdateMedicineWarehouse - Api for Update Medicine Warehouse
       parameters:
       - description: UpdateAnimalTypeReq
         in: body
@@ -822,7 +975,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: CreateDoctor - Api for Get Medicine Warehouse
+      description: GetMedicineWarehouse - Api for Get Medicine Warehouse
       parameters:
       - description: id
         in: query

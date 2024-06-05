@@ -42,4 +42,12 @@ type (
 		UpdateMedicine(ctx context.Context, req *entity.UpdateMedicineWarehouseReq) (*entity.MedicineWarehouse, error)
 		DeleteMedicine(ctx context.Context, req *entity.FieldValueReq) (*entity.StatusRes, error)
 	}
+
+	// Feeding -.
+	Feeding interface {
+		CreateFeeding(ctx context.Context, req *entity.Feeding) (*entity.Feeding, error)
+		GetFeeding(ctx context.Context, req *entity.FieldValueReq) (*entity.Feeding, error)
+		ListFeedings(ctx context.Context, req *entity.ListReq) (*entity.ListFeeding, error)
+		ListFeedingsByAnimalID(ctx context.Context, req *entity.ListFeedingByAnimalIDReq) (*entity.ListFeeding, error)
+	}
 )

@@ -13,7 +13,7 @@ import (
 
 // CreateMedicineWarehouse ...
 // @Summary Create Medicine Warehouse
-// @Description CreateDoctor - Api for crete MedicineWarehouse
+// @Description CreateMedicineWarehouse - Api for crete MedicineWarehouse
 // @Tags Medicine Warehouse
 // @Accept json
 // @Produce json
@@ -60,7 +60,7 @@ func (h *HandlerV1) CreateMedicineWarehouse(c *gin.Context) {
 
 // GetMedicineWarehouse ...
 // @Summary Get Medicine Warehouse
-// @Description CreateDoctor - Api for Get Medicine Warehouse
+// @Description GetMedicineWarehouse - Api for Get Medicine Warehouse
 // @Tags Medicine Warehouse
 // @Accept json
 // @Produce json
@@ -98,7 +98,7 @@ func (h *HandlerV1) GetMedicineWarehouse(c *gin.Context) {
 
 // ListMedicineWarehouse ...
 // @Summary List Medicine Warehouse
-// @Description CreateDoctor - Api for List Medicine Warehouse
+// @Description ListMedicineWarehouse - Api for List Medicine Warehouse
 // @Tags Medicine Warehouse
 // @Accept json
 // @Produce json
@@ -149,7 +149,7 @@ func (h *HandlerV1) ListMedicineWarehouse(c *gin.Context) {
 
 // UpdateMedicineWarehouse ...
 // @Summary Update Medicine Warehouse
-// @Description CreateDoctor - Api for Update Medicine Warehouse
+// @Description UpdateMedicineWarehouse - Api for Update Medicine Warehouse
 // @Tags Medicine Warehouse
 // @Accept json
 // @Produce json
@@ -198,7 +198,7 @@ func (h *HandlerV1) UpdateMedicineWarehouse(c *gin.Context) {
 
 // DeleteMedicineWarehouse ...
 // @Summary Delete Medicine Warehouse
-// @Description CreateDoctor - Api for Delete Medicine Warehouse
+// @Description DeleteMedicineWarehouse - Api for Delete Medicine Warehouse
 // @Tags Medicine Warehouse
 // @Accept json
 // @Produce json

@@ -13,7 +13,7 @@ import (
 
 // CreateFoodWarehouse ...
 // @Summary Create Food Warehouse
-// @Description CreateDoctor - Api for crete FoodWarehouse
+// @Description CreateFoodWarehouse - Api for crete FoodWarehouse
 // @Tags Food Warehouse
 // @Accept json
 // @Produce json
@@ -21,7 +21,7 @@ import (
 // @Success 200 {object} models.FoodWarehouse
 // @Failure 400 {object} models.ResponseError
 // @Failure 500 {object} models.ResponseError
-// @Router /v1/food-warehouse [post]
+// @Router /v1/food [post]
 func (h *HandlerV1) CreateFoodWarehouse(c *gin.Context) {
 	var (
 		body        models.FoodWarehouseCreate
@@ -66,7 +66,7 @@ func (h *HandlerV1) CreateFoodWarehouse(c *gin.Context) {
 
 // GetFoodWarehouse ...
 // @Summary Get Food Warehouse
-// @Description CreateDoctor - Api for Get FoodWarehouse
+// @Description GetFoodWarehouse - Api for Get FoodWarehouse
 // @Tags Food Warehouse
 // @Accept json
 // @Produce json
@@ -74,7 +74,7 @@ func (h *HandlerV1) CreateFoodWarehouse(c *gin.Context) {
 // @Success 200 {object} models.FoodWarehouse
 // @Failure 400 {object} models.ResponseError
 // @Failure 500 {object} models.ResponseError
-// @Router /v1/food-warehouse/get [get]
+// @Router /v1/food/get [get]
 func (h *HandlerV1) GetFoodWarehouse(c *gin.Context) {
 	id := c.Query("id")
 
@@ -107,7 +107,7 @@ func (h *HandlerV1) GetFoodWarehouse(c *gin.Context) {
 
 // ListFoodWarehouse ...
 // @Summary List Food Warehouse
-// @Description CreateDoctor - Api for List FoodWarehouse
+// @Description ListFoodWarehouse - Api for List FoodWarehouse
 // @Tags Food Warehouse
 // @Accept json
 // @Produce json
@@ -115,7 +115,7 @@ func (h *HandlerV1) GetFoodWarehouse(c *gin.Context) {
 // @Success 200 {object} models.ListFoodWarehouse
 // @Failure 400 {object} models.ResponseError
 // @Failure 500 {object} models.ResponseError
-// @Router /v1/food-warehouse [get]
+// @Router /v1/food [get]
 func (h *HandlerV1) ListFoodWarehouse(c *gin.Context) {
 	limit := c.Query("limit")
 	page := c.Query("page")
@@ -161,7 +161,7 @@ func (h *HandlerV1) ListFoodWarehouse(c *gin.Context) {
 
 // UpdateFoodWarehouse ...
 // @Summary Update FoodWarehouse
-// @Description CreateDoctor - Api for Update FoodWarehouse
+// @Description UpdateFoodWarehouse - Api for Update FoodWarehouse
 // @Tags Food Warehouse
 // @Accept json
 // @Produce json
@@ -169,7 +169,7 @@ func (h *HandlerV1) ListFoodWarehouse(c *gin.Context) {
 // @Success 200 {object} models.FoodWarehouse
 // @Failure 400 {object} models.ResponseError
 // @Failure 500 {object} models.ResponseError
-// @Router /v1/food-warehouse [put]
+// @Router /v1/food [put]
 func (h *HandlerV1) UpdateFoodWarehouse(c *gin.Context) {
 	var (
 		body        models.UpdateFoodWarehouseReq
@@ -216,7 +216,7 @@ func (h *HandlerV1) UpdateFoodWarehouse(c *gin.Context) {
 
 // DeleteFoodWarehouse ...
 // @Summary Delete FoodWarehouse
-// @Description CreateDoctor - Api for Delete FoodWarehouse
+// @Description DeleteFoodWarehouse - Api for Delete FoodWarehouse
 // @Tags Food Warehouse
 // @Accept json
 // @Produce json
@@ -224,7 +224,7 @@ func (h *HandlerV1) UpdateFoodWarehouse(c *gin.Context) {
 // @Success 200 {object} models.StatusRes
 // @Failure 400 {object} models.ResponseError
 // @Failure 500 {object} models.ResponseError
-// @Router /v1/food-warehouse [delete]
+// @Router /v1/food [delete]
 func (h *HandlerV1) DeleteFoodWarehouse(c *gin.Context) {
 	id := c.Query("id")
 

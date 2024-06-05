@@ -13,7 +13,7 @@ import (
 
 // CreateAnimals ...
 // @Summary Create Animal s
-// @Description CreateDoctor - Api for crete Animals
+// @Description CreateAnimals - Api for crete Animals
 // @Tags Animals
 // @Accept json
 // @Produce json
@@ -78,7 +78,7 @@ func (h *HandlerV1) CreateAnimals(c *gin.Context) {
 
 // GetAnimals ...
 // @Summary Get Animal s
-// @Description CreateDoctor - Api for Get Animals
+// @Description GetAnimals - Api for Get Animals
 // @Tags Animals
 // @Accept json
 // @Produce json
@@ -120,7 +120,7 @@ func (h *HandlerV1) GetAnimals(c *gin.Context) {
 
 // ListAnimals ...
 // @Summary Lis tAnimals
-// @Description CreateDoctor - Api for List Animals
+// @Description ListAnimals - Api for List Animals
 // @Tags Animals
 // @Accept json
 // @Produce json
@@ -175,7 +175,7 @@ func (h *HandlerV1) ListAnimals(c *gin.Context) {
 
 // UpdateAnimals ...
 // @Summary Update Animals
-// @Description CreateDoctor - Api for Update Animals
+// @Description UpdateAnimals - Api for Update Animals
 // @Tags Animals
 // @Accept json
 // @Produce json
@@ -241,7 +241,7 @@ func (h *HandlerV1) UpdateAnimals(c *gin.Context) {
 
 // DeleteAnimals ...
 // @Summary Delete Animals
-// @Description CreateDoctor - Api for Delete Animals
+// @Description DeleteAnimals - Api for Delete Animals
 // @Tags Animals
 // @Accept json
 // @Produce json

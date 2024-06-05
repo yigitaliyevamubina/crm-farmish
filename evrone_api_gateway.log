@@ -510,3 +510,134 @@ main.main.func1
 2024-06-05T11:14:35.587+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
 main.main.func1
 	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T23:12:41.167+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:14:51.161+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T23:14:51.161+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T23:14:52.836+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:15:16.019+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T23:15:16.020+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T23:15:17.064+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:15:26.213+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T23:15:26.214+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T23:15:27.273+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:16:55.153+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T23:16:55.153+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T23:16:57.010+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:17:16.998+0500	WARN	regtool/handle_error.go:21	ERROR: column "deleted_at" does not exist (SQLSTATE 42703)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).ListFeeding
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:121
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-05T23:19:27.190+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T23:19:27.191+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T23:19:29.124+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:19:31.197+0500	WARN	regtool/handle_error.go:21	ERROR: column "deleted_at" does not exist (SQLSTATE 42703)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).ListFeedingByAnimalID
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:169
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-05T23:20:03.498+0500	WARN	regtool/handle_error.go:21	ERROR: column "deleted_at" does not exist (SQLSTATE 42703)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).ListFeeding
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:121
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-05T23:20:14.292+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T23:20:14.293+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T23:20:16.533+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:20:18.192+0500	WARN	regtool/handle_error.go:21	ERROR: column "deleted_at" does not exist (SQLSTATE 42703)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).ListFeeding
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:121
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-05T23:21:43.768+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T23:21:43.768+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T23:21:46.409+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:22:32.945+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T23:22:34.316+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T23:25:15.856+0500	INFO	app/main.go:39	api gateway service stops
