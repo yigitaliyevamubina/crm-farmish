@@ -178,13 +178,13 @@ func (r *FoodWarehouseRepo) ListFoodWarehouse(ctx context.Context, req *entity.L
 func (r *FoodWarehouseRepo) UpdateFoodWarehouse(ctx context.Context, req *entity.UpdateFoodWarehouseReq) (*entity.FoodWarehouse, error) {
 	toSql, args, err := r.db.Sq.Builder.Update(r.table).
 		SetMap(map[string]interface{}{
-			"name":         req.Name,
-			"quantity":     req.Quantity,
-			"quantityType": req.QuantityType,
-			"animalID":     req.AnimalID,
-			"animalType":   req.AnimalType,
-			"groupFeeding": req.GroupFeeding,
-			"updated_at":   time.Now(),
+			"name":          req.Name,
+			"quantity":      req.Quantity,
+			"quantity_type": req.QuantityType,
+			"animal_id":     req.AnimalID,
+			"animal_type":   req.AnimalType,
+			"group_feeding": req.GroupFeeding,
+			"updated_at":    time.Now(),
 		}).
 		Where(r.db.Sq.Equal("id", req.ID)).
 		ToSql()

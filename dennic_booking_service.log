@@ -125,3 +125,77 @@ net/http.(*conn).serve
 2024-06-04T14:24:40.643+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
 main.main.func1
 	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T11:15:44.728+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T11:16:48.242+0500	WARN	regtool/handle_error.go:21	parsing time "string" as "2006-01-02 15:04:05": cannot parse "string" as "2006"
+crm-farmish/api/handlers/regtool.HandleError
+	/home/bobur/GolandProjects/crm-farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/bobur/GolandProjects/crm-farmish/api/handlers/v1/animals.go:42
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/bobur/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.22.2.linux-amd64/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/bobur/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.22.2.linux-amd64/src/net/http/server.go:2039
+2024-06-05T11:17:11.150+0500	WARN	regtool/handle_error.go:21	parsing time "12-12-12 12:12:12" as "2006-01-02 15:04:05": cannot parse "12-12-12 12:12:12" as "2006"
+crm-farmish/api/handlers/regtool.HandleError
+	/home/bobur/GolandProjects/crm-farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/bobur/GolandProjects/crm-farmish/api/handlers/v1/animals.go:42
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/bobur/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.22.2.linux-amd64/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/bobur/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.22.2.linux-amd64/src/net/http/server.go:2039
+2024-06-05T11:17:30.142+0500	WARN	regtool/handle_error.go:21	ERROR: invalid input syntax for type uuid: "string" (SQLSTATE 22P02)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/bobur/GolandProjects/crm-farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/bobur/GolandProjects/crm-farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/bobur/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/bobur/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.22.2.linux-amd64/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/bobur/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.22.2.linux-amd64/src/net/http/server.go:2039
+2024-06-05T11:22:12.636+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T11:22:12.636+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/bobur/GolandProjects/crm-farmish/cmd/app/main.go:30
