@@ -505,3 +505,8 @@ main.main.func1
 2024-06-04T20:45:14.449+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
 main.main.func1
 	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-05T11:03:04.094+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T11:14:35.586+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T11:14:35.587+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
