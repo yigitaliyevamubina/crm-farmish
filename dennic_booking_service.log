@@ -199,3 +199,8 @@ net/http.(*conn).serve
 2024-06-05T11:22:12.636+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
 main.main.func1
 	/home/bobur/GolandProjects/crm-farmish/cmd/app/main.go:30
+2024-06-05T11:51:14.840+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-05T11:51:16.204+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-05T11:51:16.204+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/bobur/GolandProjects/crm-farmish/cmd/app/main.go:30
