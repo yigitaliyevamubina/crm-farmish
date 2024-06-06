@@ -40,11 +40,6 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
-                        "type": "string",
-                        "name": "order_by",
-                        "in": "query"
-                    },
-                    {
                         "type": "integer",
                         "name": "page",
                         "in": "query"
@@ -268,11 +263,6 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "name": "limit",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "name": "order_by",
                         "in": "query"
                     },
                     {
@@ -671,6 +661,41 @@ const docTemplate = `{
                 }
             }
         },
+        "/v1/feeding/not-feeding": {
+            "get": {
+                "description": "ListFeedingBy - API for listing Not Feeding",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Feeding"
+                ],
+                "summary": "List NotFeeding",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListFeeding"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/food": {
             "get": {
                 "description": "ListFoodWarehouse - Api for List FoodWarehouse",
@@ -693,11 +718,6 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "name": "limit",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "name": "order_by",
                         "in": "query"
                     },
                     {
@@ -927,11 +947,6 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
-                        "type": "string",
-                        "name": "order_by",
-                        "in": "query"
-                    },
-                    {
                         "type": "integer",
                         "name": "page",
                         "in": "query"
@@ -1132,6 +1147,374 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/v1/treatment": {
+            "get": {
+                "description": "ListTreatment - Api for List Treatment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Treatment"
+                ],
+                "summary": "List Treatment",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListTreatment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "CreateTreatment - Api for crete Animals",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Treatment"
+                ],
+                "summary": "Create Treatment",
+                "parameters": [
+                    {
+                        "description": "AnimalTypeCreate",
+                        "name": "AnimalTypeCreate",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateTreatment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Treatment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/treatment/animal-id": {
+            "get": {
+                "description": "ListTreatmentByAnimalID - Api for List Treatment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Treatment"
+                ],
+                "summary": "List Treatment",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "animal_id",
+                        "name": "animal_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListTreatment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/treatment/get": {
+            "get": {
+                "description": "GetTreatment - Api for Get Animals",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Treatment"
+                ],
+                "summary": "Get Treatment",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Treatment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/treatment/medicine-id": {
+            "get": {
+                "description": "ListTreatmentByMedicineID - Api for List Treatment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Treatment"
+                ],
+                "summary": "List Treatment",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "medicine_id",
+                        "name": "medicine_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListTreatment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/watering": {
+            "post": {
+                "description": "Create Watering - Api for crete Feeding",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Feeding"
+                ],
+                "summary": "Create Watering",
+                "parameters": [
+                    {
+                        "description": "AnimalTypeCreate",
+                        "name": "AnimalTypeCreate",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateWatering"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Watering"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/watering/get": {
+            "get": {
+                "description": "GetWatering - Api for Get Watering",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Feeding"
+                ],
+                "summary": "Get Watering",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Watering"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/watering/not-watering": {
+            "get": {
+                "description": "ListFeedingBy - API for listing Not Watering",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Feeding"
+                ],
+                "summary": "List NotWatering",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListWatering"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -1246,6 +1629,25 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "male_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateTreatment": {
+            "type": "object",
+            "properties": {
+                "animalID": {
+                    "type": "string"
+                },
+                "medicineID": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateWatering": {
+            "type": "object",
+            "properties": {
+                "animal_id": {
                     "type": "string"
                 }
             }
@@ -1395,6 +1797,34 @@ const docTemplate = `{
                 }
             }
         },
+        "models.ListTreatment": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "treatment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Treatment"
+                    }
+                }
+            }
+        },
+        "models.ListWatering": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "watering": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Watering"
+                    }
+                }
+            }
+        },
         "models.MedicineWarehouse": {
             "type": "object",
             "properties": {
@@ -1454,6 +1884,23 @@ const docTemplate = `{
             "properties": {
                 "status": {
                     "type": "boolean"
+                }
+            }
+        },
+        "models.Treatment": {
+            "type": "object",
+            "properties": {
+                "animalID": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "medicineID": {
+                    "type": "string"
+                },
+                "treatmentTime": {
+                    "type": "string"
                 }
             }
         },
@@ -1539,6 +1986,20 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "quantity_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Watering": {
+            "type": "object",
+            "properties": {
+                "animal_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "watering_time": {
                     "type": "string"
                 }
             }

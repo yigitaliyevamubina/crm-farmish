@@ -49,5 +49,16 @@ type (
 		GetFeeding(ctx context.Context, req *entity.FieldValueReq) (*entity.Feeding, error)
 		ListFeedings(ctx context.Context, req *entity.ListReq) (*entity.ListFeeding, error)
 		ListFeedingsByAnimalID(ctx context.Context, req *entity.ListFeedingByAnimalIDReq) (*entity.ListFeeding, error)
+		CreateWatering(ctx context.Context, req *entity.Watering) (*entity.Watering, error)
+		GetWatering(ctx context.Context, req *entity.FieldValueReq) (*entity.Watering, error)
+		NotWatered(ctx context.Context) (*entity.ListWatering, error)
+		NotFeedings(ctx context.Context) (*entity.ListFeeding, error)
+	}
+
+	// Treatment -.
+	Treatment interface {
+		CreateMedicineTreatment(ctx context.Context, req *entity.Treatment) (*entity.Treatment, error)
+		GetMedicineTreatment(ctx context.Context, req *entity.FieldValueReq) (*entity.Treatment, error)
+		ListMedicineTreatment(ctx context.Context, req *entity.ListTreatmentReq) (*entity.ListTreatment, error)
 	}
 )

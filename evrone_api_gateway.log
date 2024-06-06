@@ -641,3 +641,298 @@ main.main.func1
 2024-06-05T23:22:32.945+0500	INFO	app/main.go:39	api gateway service stops
 2024-06-05T23:22:34.316+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
 2024-06-05T23:25:15.856+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:32:00.213+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:33:51.374+0500	WARN	regtool/handle_error.go:21	ERROR: new row for relation "animals" violates check constraint "animals_gender_check" (SQLSTATE 23514)
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateAnimals
+	/home/ali/Goland/crm_farmish/api/handlers/v1/animals.go:60
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:34:19.322+0500	WARN	regtool/handle_error.go:21	expected 3 arguments, got 1
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:213
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:38:54.752+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:38:54.752+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:38:55.885+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:38:59.070+0500	WARN	regtool/handle_error.go:21	expected 3 arguments, got 1
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:213
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:39:16.097+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:39:16.099+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:39:17.819+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:39:22.126+0500	WARN	regtool/handle_error.go:21	expected 3 arguments, got 1
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:213
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:39:59.202+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:39:59.202+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:40:00.307+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:40:01.959+0500	WARN	regtool/handle_error.go:21	expected 3 arguments, got 1
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:213
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:40:18.350+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:40:18.351+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:40:19.864+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:40:21.259+0500	WARN	regtool/handle_error.go:21	cannot convert [5825b721-1aa5-4a2c-8b5d-d018015dbed3] to UUID
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:213
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:40:37.521+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:40:37.522+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:40:38.810+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:40:40.207+0500	WARN	regtool/handle_error.go:21	expected 3 arguments, got 1
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:213
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:41:57.035+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:41:57.036+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:41:58.265+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:42:00.206+0500	WARN	regtool/handle_error.go:21	cannot convert [aaad371e-3db1-4974-8720-5f011c40ce2a] to UUID
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).CreateWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:213
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:42:48.320+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:42:48.320+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:42:49.455+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:43:07.444+0500	WARN	regtool/handle_error.go:21	no rows in result set
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).GetWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:246
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:44:08.124+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:44:08.124+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:44:09.315+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:44:10.890+0500	WARN	regtool/handle_error.go:21	no rows in result set
+crm-farmish/api/handlers/regtool.HandleError
+	/home/ali/Goland/crm_farmish/api/handlers/regtool/handle_error.go:21
+crm-farmish/api/handlers/v1.(*HandlerV1).GetWatering
+	/home/ali/Goland/crm_farmish/api/handlers/v1/feeding.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/home/ali/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/home/ali/sdk/go1.22.0/src/net/http/server.go:2039
+2024-06-06T07:46:12.625+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:46:12.626+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:46:14.183+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:47:11.966+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:47:11.967+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:47:13.230+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:47:55.617+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:47:55.617+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T07:47:59.482+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T07:48:15.862+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T07:48:15.862+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30
+2024-06-06T10:37:35.538+0500	INFO	app/main.go:28	Listen: 	{"address": "localhost:9050"}
+2024-06-06T10:40:32.593+0500	INFO	app/main.go:39	api gateway service stops
+2024-06-06T10:40:32.594+0500	ERROR	app/main.go:30	app run	{"error": "http: Server closed"}
+main.main.func1
+	/home/ali/Goland/crm_farmish/cmd/app/main.go:30

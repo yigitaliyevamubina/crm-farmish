@@ -33,3 +33,22 @@ func (r *FeedingUseCase) ListFeedings(ctx context.Context, req *entity.ListReq) 
 func (r *FeedingUseCase) ListFeedingsByAnimalID(ctx context.Context, req *entity.ListFeedingByAnimalIDReq) (*entity.ListFeeding, error) {
 	return r.Repo.ListFeedingsByAnimalID(ctx, req)
 }
+
+func (r *FeedingUseCase) CreateWatering(ctx context.Context, req *entity.Watering) (*entity.Watering, error) {
+	req.ID = uuid.New().String()
+	req.WateringTime = time.Now()
+
+	return r.Repo.CreateWatering(ctx, req)
+}
+
+func (r *FeedingUseCase) GetWatering(ctx context.Context, req *entity.FieldValueReq) (*entity.Watering, error) {
+	return r.Repo.GetWatering(ctx, req)
+}
+
+func (r *FeedingUseCase) NotWatered(ctx context.Context) (*entity.ListWatering, error) {
+	return r.Repo.NotWatered(ctx)
+}
+
+func (r *FeedingUseCase) NotFeedings(ctx context.Context) (*entity.ListFeeding, error) {
+	return r.Repo.NotFeedings(ctx)
+}

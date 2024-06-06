@@ -74,6 +74,18 @@ definitions:
       male_id:
         type: string
     type: object
+  models.CreateTreatment:
+    properties:
+      animalID:
+        type: string
+      medicineID:
+        type: string
+    type: object
+  models.CreateWatering:
+    properties:
+      animal_id:
+        type: string
+    type: object
   models.Feeding:
     properties:
       animal_id:
@@ -168,6 +180,24 @@ definitions:
           $ref: '#/definitions/models.MedicineWarehouse'
         type: array
     type: object
+  models.ListTreatment:
+    properties:
+      count:
+        type: integer
+      treatment:
+        items:
+          $ref: '#/definitions/models.Treatment'
+        type: array
+    type: object
+  models.ListWatering:
+    properties:
+      count:
+        type: integer
+      watering:
+        items:
+          $ref: '#/definitions/models.Watering'
+        type: array
+    type: object
   models.MedicineWarehouse:
     properties:
       created_at:
@@ -207,6 +237,17 @@ definitions:
     properties:
       status:
         type: boolean
+    type: object
+  models.Treatment:
+    properties:
+      animalID:
+        type: string
+      id:
+        type: string
+      medicineID:
+        type: string
+      treatmentTime:
+        type: string
     type: object
   models.UpdateAnimalReq:
     properties:
@@ -264,6 +305,15 @@ definitions:
       quantity_type:
         type: string
     type: object
+  models.Watering:
+    properties:
+      animal_id:
+        type: string
+      id:
+        type: string
+      watering_time:
+        type: string
+    type: object
 host: localhost:9050
 info:
   contact: {}
@@ -310,9 +360,6 @@ paths:
       - in: query
         name: limit
         type: integer
-      - in: query
-        name: order_by
-        type: string
       - in: query
         name: page
         type: integer
@@ -461,9 +508,6 @@ paths:
       - in: query
         name: limit
         type: integer
-      - in: query
-        name: order_by
-        type: string
       - in: query
         name: page
         type: integer
@@ -698,6 +742,29 @@ paths:
       summary: Get Feeding
       tags:
       - Feeding
+  /v1/feeding/not-feeding:
+    get:
+      consumes:
+      - application/json
+      description: ListFeedingBy - API for listing Not Feeding
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListFeeding'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List NotFeeding
+      tags:
+      - Feeding
   /v1/food:
     delete:
       consumes:
@@ -738,9 +805,6 @@ paths:
       - in: query
         name: limit
         type: integer
-      - in: query
-        name: order_by
-        type: string
       - in: query
         name: page
         type: integer
@@ -890,9 +954,6 @@ paths:
         name: limit
         type: integer
       - in: query
-        name: order_by
-        type: string
-      - in: query
         name: page
         type: integer
       produces:
@@ -1000,6 +1061,246 @@ paths:
       summary: Get Medicine Warehouse
       tags:
       - Medicine Warehouse
+  /v1/treatment:
+    get:
+      consumes:
+      - application/json
+      description: ListTreatment - Api for List Treatment
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListTreatment'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List Treatment
+      tags:
+      - Treatment
+    post:
+      consumes:
+      - application/json
+      description: CreateTreatment - Api for crete Animals
+      parameters:
+      - description: AnimalTypeCreate
+        in: body
+        name: AnimalTypeCreate
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateTreatment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Treatment'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Treatment
+      tags:
+      - Treatment
+  /v1/treatment/animal-id:
+    get:
+      consumes:
+      - application/json
+      description: ListTreatmentByAnimalID - Api for List Treatment
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - description: animal_id
+        in: query
+        name: animal_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListTreatment'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List Treatment
+      tags:
+      - Treatment
+  /v1/treatment/get:
+    get:
+      consumes:
+      - application/json
+      description: GetTreatment - Api for Get Animals
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Treatment'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Treatment
+      tags:
+      - Treatment
+  /v1/treatment/medicine-id:
+    get:
+      consumes:
+      - application/json
+      description: ListTreatmentByMedicineID - Api for List Treatment
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - description: medicine_id
+        in: query
+        name: medicine_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListTreatment'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List Treatment
+      tags:
+      - Treatment
+  /v1/watering:
+    post:
+      consumes:
+      - application/json
+      description: Create Watering - Api for crete Feeding
+      parameters:
+      - description: AnimalTypeCreate
+        in: body
+        name: AnimalTypeCreate
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateWatering'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Watering'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Create Watering
+      tags:
+      - Feeding
+  /v1/watering/get:
+    get:
+      consumes:
+      - application/json
+      description: GetWatering - Api for Get Watering
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Watering'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Get Watering
+      tags:
+      - Feeding
+  /v1/watering/not-watering:
+    get:
+      consumes:
+      - application/json
+      description: ListFeedingBy - API for listing Not Watering
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListWatering'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: List NotWatering
+      tags:
+      - Feeding
 securityDefinitions:
   ApiKeyAuth:
     in: header

@@ -15,8 +15,18 @@ type ListFeeding struct {
 }
 
 type ListFeedingByAnimalIDReq struct {
-	Page         uint64
-	Limit        uint64
-	DeleteStatus bool
+	Page  uint64
+	Limit uint64
+	ID    string
+}
+
+type Watering struct {
 	ID           string
+	AnimalID     string
+	WateringTime time.Time
+}
+
+type ListWatering struct {
+	Count    int
+	Watering []Watering
 }

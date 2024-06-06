@@ -25,6 +25,7 @@ type RouteOption struct {
 	FoodWarehouse     usecase.FoodWarehouse
 	MedicineWarehouse usecase.MedicineWarehouse
 	Feeding           usecase.Feeding
+	Treatment         usecase.Treatment
 }
 
 // NewRoute
@@ -49,6 +50,7 @@ func NewRoute(option RouteOption) *gin.Engine {
 		FoodWarehouse:     option.FoodWarehouse,
 		MedicineWarehouse: option.MedicineWarehouse,
 		Feeding:           option.Feeding,
+		Treatment:         option.Treatment,
 
 		//BrokerProducer: option.BrokerProducer,
 	})
@@ -94,8 +96,21 @@ func NewRoute(option RouteOption) *gin.Engine {
 	feeding := api.Group("/feeding")
 	feeding.POST("", HandlerV1.CreateFeeding)
 	feeding.GET("/get", HandlerV1.GetFeeding)
+	feeding.GET("/not-feeding", HandlerV1.NotFeeding)
 	feeding.GET("", HandlerV1.ListFeeding)
 	feeding.GET("/animal-id", HandlerV1.ListFeedingByAnimalID)
+
+	watering := api.Group("/watering")
+	watering.POST("", HandlerV1.CreateWatering)
+	watering.GET("/get", HandlerV1.GetWatering)
+	watering.GET("/not-watering", HandlerV1.NotWatering)
+
+	treatment := api.Group("/treatment")
+	treatment.POST("", HandlerV1.CreateTreatment)
+	treatment.GET("/get", HandlerV1.GetTreatment)
+	treatment.GET("/", HandlerV1.ListTreatment)
+	treatment.GET("/animal-id", HandlerV1.ListTreatmentByAnimalID)
+	treatment.GET("/medicine-id", HandlerV1.ListTreatmentByMedicineID)
 
 	url := ginSwagger.URL("swagger/doc.json")
 	api.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))

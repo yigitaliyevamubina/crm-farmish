@@ -63,6 +63,8 @@ func (a *App) Run() error {
 
 	feeding := repo.NewFeedingRepo(a.DB)
 
+	treatment := repo.NewTreatmentRepo(a.DB)
+
 	// use case initialization
 
 	animalTypeUseCase := usecase.NewAnimalTypeUseCase(animalType)
@@ -75,6 +77,8 @@ func (a *App) Run() error {
 
 	feedingUseCase := usecase.NewFeedingUseCase(feeding)
 
+	treatmentUseCase := usecase.NewTreatmentUseCase(treatment)
+
 	// api init
 	handler := api.NewRoute(api.RouteOption{
 		ContextTimeout:    contextTimeout,
@@ -85,6 +89,7 @@ func (a *App) Run() error {
 		FoodWarehouse:     foodWarehouseUseCase,
 		MedicineWarehouse: medicineWarehouseUseCase,
 		Feeding:           feedingUseCase,
+		Treatment:         treatmentUseCase,
 	})
 
 	// server init

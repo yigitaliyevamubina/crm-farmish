@@ -17,6 +17,7 @@ type HandlerV1 struct {
 	foodWarehouse     usecase.FoodWarehouse
 	medicineWarehouse usecase.MedicineWarehouse
 	feeding           usecase.Feeding
+	treatment         usecase.Treatment
 }
 
 // HandlerV1Config ...
@@ -29,6 +30,7 @@ type HandlerV1Config struct {
 	FoodWarehouse     usecase.FoodWarehouse
 	MedicineWarehouse usecase.MedicineWarehouse
 	Feeding           usecase.Feeding
+	Treatment         usecase.Treatment
 }
 
 // New ...
@@ -42,5 +44,6 @@ func New(c *HandlerV1Config) *HandlerV1 {
 		foodWarehouse:     c.FoodWarehouse,
 		medicineWarehouse: c.MedicineWarehouse,
 		feeding:           c.Feeding,
+		treatment:         c.Treatment,
 	}
 }

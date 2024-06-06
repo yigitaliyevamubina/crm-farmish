@@ -5,6 +5,7 @@ import (
 	e "crm-farmish/api/handlers/regtool"
 	"crm-farmish/api/models"
 	"crm-farmish/internal/entity"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"google.golang.org/protobuf/encoding/protojson"
 	"net/http"
@@ -178,4 +179,142 @@ func (h *HandlerV1) ListFeedingByAnimalID(c *gin.Context) {
 	}
 	feedings.Count = res.Count
 	c.JSON(http.StatusOK, feedings)
+}
+
+// CreateWatering ...
+// @Summary Create Watering
+// @Description Create Watering - Api for crete Feeding
+// @Tags Feeding
+// @Accept json
+// @Produce json
+// @Param AnimalTypeCreate body models.CreateWatering true "AnimalTypeCreate"
+// @Success 200 {object} models.Watering
+// @Failure 400 {object} models.ResponseError
+// @Failure 500 {object} models.ResponseError
+// @Router /v1/watering [post]
+func (h *HandlerV1) CreateWatering(c *gin.Context) {
+	var (
+		body        models.CreateWatering
+		jsonMarshal protojson.MarshalOptions
+	)
+	jsonMarshal.UseProtoNames = true
+
+	err := c.ShouldBindJSON(&body)
+
+	if e.HandleError(c, err, h.log, http.StatusBadRequest, "CreateWatering") {
+		return
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.Context.Timeout))
+	defer cancel()
+
+	res, err := h.feeding.CreateWatering(ctx, &entity.Watering{
+		AnimalID: body.AnimalID,
+	})
+	if e.HandleError(c, err, h.log, http.StatusInternalServerError, "CreateWatering") {
+		return
+	}
+
+	c.JSON(http.StatusOK, &models.Watering{
+		ID:           res.ID,
+		AnimalID:     res.AnimalID,
+		WateringTime: e.Format(res.WateringTime),
+	})
+}
+
+// GetWatering ...
+// @Summary Get Watering
+// @Description GetWatering - Api for Get Watering
+// @Tags Feeding
+// @Accept json
+// @Produce json
+// @Param id query string true "id"
+// @Success 200 {object} models.Watering
+// @Failure 400 {object} models.ResponseError
+// @Failure 500 {object} models.ResponseError
+// @Router /v1/watering/get [get]
+func (h *HandlerV1) GetWatering(c *gin.Context) {
+	id := c.Query("id")
+
+	fmt.Println(id)
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.Context.Timeout))
+	defer cancel()
+
+	res, err := h.feeding.GetWatering(ctx, &entity.FieldValueReq{
+		Field: "id",
+		Value: id,
+	})
+
+	if e.HandleError(c, err, h.log, http.StatusBadRequest, "GetWatering") {
+		return
+	}
+
+	c.JSON(http.StatusOK, &models.Watering{
+		ID:           res.ID,
+		AnimalID:     res.AnimalID,
+		WateringTime: e.Format(res.WateringTime),
+	})
+}
+
+// NotFeeding ...
+// @Summary List NotFeeding
+// @Description ListFeedingBy - API for listing Not Feeding
+// @Tags Feeding
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.ListFeeding
+// @Failure 400 {object} models.ResponseError
+// @Failure 500 {object} models.ResponseError
+// @Router /v1/feeding/not-feeding [get]
+func (h *HandlerV1) NotFeeding(c *gin.Context) {
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.Context.Timeout))
+	defer cancel()
+
+	res, err := h.feeding.NotFeedings(ctx)
+
+	if e.HandleError(c, err, h.log, http.StatusBadRequest, "NotFeeding") {
+		return
+	}
+
+	var feedings models.ListFeeding
+	for _, feedingRes := range res.Feedings {
+		var feeding models.Feeding
+		feeding.ID = feedingRes.ID
+		feeding.AnimalID = feedingRes.AnimalID
+		feedings.Feedings = append(feedings.Feedings, feeding)
+	}
+	feedings.Count = res.Count
+	c.JSON(http.StatusOK, feedings)
+}
+
+// NotWatering ...
+// @Summary List NotWatering
+// @Description ListFeedingBy - API for listing Not Watering
+// @Tags Feeding
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.ListWatering
+// @Failure 400 {object} models.ResponseError
+// @Failure 500 {object} models.ResponseError
+// @Router /v1/watering/not-watering [get]
+func (h *HandlerV1) NotWatering(c *gin.Context) {
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.Context.Timeout))
+	defer cancel()
+
+	res, err := h.feeding.NotWatered(ctx)
+
+	if e.HandleError(c, err, h.log, http.StatusBadRequest, "NotWatering") {
+		return
+	}
+
+	var waterings models.ListFeeding
+	for _, wateringRes := range res.Watering {
+		var watering models.Feeding
+		watering.ID = wateringRes.ID
+		watering.AnimalID = wateringRes.AnimalID
+		waterings.Feedings = append(waterings.Feedings, watering)
+	}
+	waterings.Count = res.Count
+	c.JSON(http.StatusOK, waterings)
 }

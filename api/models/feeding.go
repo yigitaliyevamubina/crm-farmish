@@ -23,3 +23,18 @@ type ListFeedingByAnimalIDReq struct {
 	DeleteStatus bool   `json:"delete_status"`
 	AnimalID     string `json:"animal_id"`
 }
+
+type Watering struct {
+	ID           string `json:"id"`
+	AnimalID     string `json:"animal_id"`
+	WateringTime string `json:"watering_time"`
+}
+
+type CreateWatering struct {
+	AnimalID string `json:"animal_id"`
+}
+
+type ListWatering struct {
+	Count    int        `json:"count"`
+	Watering []Watering `json:"watering"`
+}
